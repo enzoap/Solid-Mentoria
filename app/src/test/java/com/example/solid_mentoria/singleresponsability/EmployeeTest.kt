@@ -4,7 +4,13 @@ import org.junit.Test
 import org.junit.Assert.*
 
 internal class EmployeeTest {
-    private val employee = Employee("Teste")
+    private val name = "Teste"
+
+    private val employee: EmployeeInterface = EmployeeFacade(
+        payCalculator = PayCalculator(),
+        hourReporter = HourReporter(),
+        employeesaver = EmployeeSaver(name)
+    )
 
     @Test
     fun `calculatePay should return the payment`() {
@@ -22,7 +28,7 @@ internal class EmployeeTest {
     @Test
     fun `reportHours should return the hours plus additional hours`() {
         // Given
-        val expected = 202
+        val expected = 162
 
         // When
         val actual = employee.reportHours(2)
