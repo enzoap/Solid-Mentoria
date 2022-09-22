@@ -20,7 +20,7 @@ class ShowFinancialData(
             println("Vendas: ${financialData.sales}")
             println("Gastos: R$ ${financialData.outgoing},00")
             println("Lucro: R$ ${financialData.profit},00")
-            println("Versão Web copyright 2022")
+            println("Versão Pdf copyright 2022")
         }
 
     }
