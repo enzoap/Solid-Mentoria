@@ -12,16 +12,24 @@ class ShowFinancialDataTest {
 
     @Test
     fun `show should print the financial data on the site`() {
-        val showFinancialData = ShowFinancialData(financialData)
-        showFinancialData.show(PlatformType.WEB)
+        val showFinancialData = ShowFinancialData(platform = PlatformWeb(financialData))
+        showFinancialData.show()
     }
 
     @Test
     fun `show should print the financial data on the site with color red`() {
         val showFinancialData = ShowFinancialData(
-            financialData.copy(profit = "-1000", sales = "1000", outgoing = "2000")
+            platform = PlatformWeb(financialData.copy(profit = "-1000", sales = "1000", outgoing = "2000"))
         )
-        showFinancialData.show(PlatformType.WEB)
+        showFinancialData.show()
+    }
+
+    @Test
+    fun `show should print the financial data in the pdf format`() {
+        val showFinancialData = ShowFinancialData(
+            platform = PlatformPdf(financialData.copy(profit = "-1000", sales = "1000", outgoing = "2000"))
+        )
+        showFinancialData.show()
     }
 
 }
