@@ -1,11 +1,11 @@
 package com.example.solid_mentoria.liskovsubstitution
 
-open class Rectangle(
-    open var width: Int,
-    open var height: Int
-) {
+class Rectangle(
+    val width: Int,
+    val height: Int
+): Shape {
 
-    fun area(): Int {
+    override fun area(): Int {
         return width * height
     }
 }

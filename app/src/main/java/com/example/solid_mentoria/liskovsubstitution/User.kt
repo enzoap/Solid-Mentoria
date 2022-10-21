@@ -1,7 +1,7 @@
 package com.example.solid_mentoria.liskovsubstitution
 
 class User(
-   private val rectangle: Rectangle
+   private val rectangle: Shape
 ) {
 
     fun calculateArea(): Int {
