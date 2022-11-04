@@ -1,11 +1,9 @@
 package com.example.solid_mentoria.interfacesegregation
 
-import com.example.solid_mentoria.interfacesegregation.component.Component
-
 class S2(
-    private val component: Component
+    private val s2Adapter: S2Adapter
 ) {
     fun metodo2() {
-        component.metodo2()
+        s2Adapter.metodo2()
     }
 }
